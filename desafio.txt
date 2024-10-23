@@ -1,0 +1,29 @@
+Desafío - Mascotas Virtuales
+Objetivo: Crear un sistema de cuidado de mascotas virtuales donde los usuarios puedan
+adoptar una mascota virtual, alimentarla y comprobar su felicidad.
+Microservicios:
+1. Servicio de Adopción:
+a. Permite a los usuarios adoptar una mascota virtual
+b. Almacena la información de la mascota, como el nombre, tipo (perro, gato,
+etc.) y la fecha de adopción.
+2. Servicio de Alimentación:
+a. Permite a los usuarios "alimentar" a su mascota virtual para mantenerla
+saludable.
+b. Lleva un registro de los horarios de alimentación.
+3. Servicio de Rastreador de Felicidad
+a. Verifica qué tan feliz está la mascota en función de cuándo fue alimentada
+por última vez.
+Requisitos:
+● Comunicación: Los microservicios deben comunicarse entre sí para actualizar el
+estado y la felicidad de la mascota. Por ejemplo, el Rastreador de Felicidad debe
+consultar al Servicio de Alimentación para verificar la última hora en que se alimentó
+a la mascota.
+● Funcionalidades: Todas las funcionalidades del ejercicio deben estar completas.
+Entregar a las 16:00 hs el 24 de Octubre.
+● Uso de Github:
+○ Historial de versiones en Git
+○ Trabajar en ramas por persona-microservicio
+Bonus: Añade una función extra, esto puede ser:
+● Desplegar los servicios. Puedes usar una plataforma en la nube si lo deseas.
+● Enviar una notificación cuando la mascota tenga hambre
+● Permitir a los usuarios cambiar el nombre de su mascota
