@@ -2,16 +2,13 @@ from flask import Blueprint, request, jsonify
 from models import db, mascota
 from datetime import datetime
 
-# Creamos el blueprint para organizar las rutas
 adopcion_bp = Blueprint('adopcion', __name__)
 
-# Ruta para adoptar una mascota
 @adopcion_bp.route('/adoptar', methods=['POST'])
 def adoptar_mascota():
     # Obtener datos enviados en el cuerpo del POST request
     data = request.json
 
-    # Extraemos los valores del JSON (asegurándonos de que todos los campos estén presentes)
     nombre = data.get('nombre')
     tipo = data.get('tipo')
     raza = data.get('raza')
@@ -31,8 +28,6 @@ def adoptar_mascota():
         color=color,
         fecha_adopcion=datetime.now()
     )
-
-    # Guardamos la mascota en la base de datos
     try:
         db.session.add(nueva_mascota)
         db.session.commit()

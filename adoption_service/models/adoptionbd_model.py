@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
+from datetime import datetime   
 db = SQLAlchemy()
 class mascota (db.Model): 
     id = db.Column(db.Integer, primary_key=True)
@@ -8,7 +8,7 @@ class mascota (db.Model):
     raza = db.Column(db.String(120), nullable=False)
     sexo = db.Column(db.String(120), nullable=False)
     color = db.Column(db.String(120), nullable=False)
-
+    fecha_adopcion = db.Column(db.Datetime, default=datetime.now, nullable=False)
 
 # #documentación 
 # Motivo: estamos creando el modelo Mascota que representa las mascotas adoptadas. Este modelo tiene 6 columnas importantes:
